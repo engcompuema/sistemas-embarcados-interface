@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Sistemas Embarcados", "PythonApplication1\Sistemas Embarcados.pyproj", "{6863E329-26C9-467E-A085-EDED05D2B134}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6863E329-26C9-467E-A085-EDED05D2B134}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6863E329-26C9-467E-A085-EDED05D2B134}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B817FF05-BC3F-4B18-A941-8B616CD31982}
+	EndGlobalSection
+EndGlobal
