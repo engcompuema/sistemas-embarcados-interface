@@ -1,58 +1,52 @@
-from tkinter import filedialog
 import tkinter
 from tkinter import *
-from PIL import ImageTk, Image
-import os
 
 
-# Criando janela principal
-wd = tkinter.Tk()
-wd.title("Sistema de Processamento Veicular")
-wd.geometry("650x400")
-#wd.maxsize(650, 400)
-wd.minsize(650, 400)
+class Interface(object):
+    def __init__(self, *args, **kwargs):
+        wd = tkinter.Tk()
+        wd.title("Sistema de Processamento Veicular")
+        wd.geometry("900x500")
+        
+        #Componentes
+        lbl_nomeImg = tkinter.Label(wd, text="Imagem", font=(16))
+        lbl_nomeImg.grid(row=0, column=0, sticky=W, padx=5, pady=3)
+
+        lbl_espacoImg = tkinter.Label(wd, bg="white", height=25, width=65)
+        lbl_espacoImg.grid(row=1,column=0, padx=10, pady=10, columnspan=2, rowspan=4)
+
+        lbl_statusServ = tkinter.Label(wd, text="Status do Serviço: ",  font=16)
+        lbl_statusServ.grid(row=1, column=3, padx=10, sticky=NW)
+ 
+        lbl_statusMode = tkinter.Label(wd, text="ON ",  font=14, fg="green")
+        lbl_statusMode.grid(row=1, column=4, sticky=NW)
+
+        lbl_placa = tkinter.Label(wd, text="Placa: ",  font=16)
+        lbl_placa.grid(row=2, column=3, padx=10, sticky=NW)
+
+        input_placa = tkinter.Entry(wd, state=DISABLED)
+        input_placa.grid(row=2, column=4, sticky=NW)
+
+        lbl_prop = tkinter.Label(wd, text="Proprietário: ",  font=16)
+        lbl_prop.grid(row=4, column=3, padx=10, sticky=NW)
+
+        nome = StringVar(value="fulano de tal da silva cadilhe")
+
+        input_prop = tkinter.Entry(wd, state=DISABLED, width=40, textvariable=nome)
+        input_prop.grid(row=4, column=4, sticky=NW)
+
+        lbl_statusveic = tkinter.Label(wd, text="Status do Veiculo: ",  font=16)
+        lbl_statusveic.grid(row=3, column=3, padx=10, pady=3, sticky=NW)
+
+        input_statusveic = tkinter.Entry(wd, state=DISABLED)
+        input_statusveic.grid(row=3, column=4, sticky=NW)
+
+        btn_imagem = tkinter.Button(wd, text="Imagem")
+        btn_imagem.grid(row=6,column=0, sticky=E)
+
+        btn_Processar = tkinter.Button(wd, text="Processar")
+        btn_Processar.grid(row=6,column=1, sticky=W)
 
 
-
-# funções
-def btnImg_onclick():
-	img_path = (filedialog.askopenfilename())
-	img = Image.open(img_path)
-	img = img.resize((300, 350), Image.ANTIALIAS)
-	img = ImageTk.PhotoImage(img)
-	lb_img = tkinter.Label(wd, image=img, height=300, width=350)
-	lb_img.image = img
-	lb_img.place(x=5,y=20)
-
-
-# Defindo Componentes
-
-# row 0
-nome_img = tkinter.Label(wd, text="IMG")
-nome_placa = tkinter.Label(wd, text="Nº Placa: ")
-lb_placa = tkinter.Label(wd, text="placa aqui!")
-
-# row 1
-
-nome_status = tkinter.Label(wd, text="Status do Veiculo: ")
-lb_status = tkinter.Label(wd, text="status aqui!")
-
-# row 3
-bt_img = tkinter.Button(wd, text="Imagem", command=btnImg_onclick)
-bt_proc = tkinter.Button(wd, text="Processar")
-bt_busca = tkinter.Button(wd, text="Buscar")
-
-# Aplicando Layout
-nome_img.place(x=5,y=0)
-nome_placa.place(x=400, y=20)
-lb_placa.place(x=450,y=20)
-#lb_img.place(x=5,y=20)
-nome_status.place(x=400, y=50)
-lb_status.place(x=495, y=50)
-bt_img.place(x=95, y=340)
-bt_proc.place(x=195,y=340)
-bt_busca.place(x=400, y=80)
-
-# loop principal
-wd.mainloop()
-
+        #Loop Principal
+        wd.mainloop()

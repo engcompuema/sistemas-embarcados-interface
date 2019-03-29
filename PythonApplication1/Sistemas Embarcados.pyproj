@@ -5,7 +5,7 @@
     <ProjectGuid>6863e329-26c9-467e-a085-eded05d2b134</ProjectGuid>
     <ProjectHome>
     </ProjectHome>
-    <StartupFile>interface.py</StartupFile>
+    <StartupFile>Main.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,10 +22,16 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="interface.py">
+    <Compile Include="Interface.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Main.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="PythonApplication1.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ft.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
